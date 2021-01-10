@@ -1,0 +1,30 @@
+﻿@model FormManagementApp.Entity.Form
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+@if (Model != null)
+{
+    <div class="col-md-9">
+        <div class="card mb-3">
+            <div class="card-body"></div>
+            <div class="row no-gutter">
+                <div class="col-md-3">
+                    @Model.Name
+                </div>
+                <div class="col-md-9">
+                    <h3 class="card-title">@Model.Ad</h3>
+                    <p class="card-text">@Model.Soyad</p>
+                    <p class="card-text">@Model.Yas</p>
+                    <p class="card-text">@Model.CreatedAt</p>
+                    <p class="card-text">@Model.CreatedBy</p>
+                    <p class="card-text">@Model.Description</p>
+                    <p class="card-text">
+                        <small class="text-muted"> </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

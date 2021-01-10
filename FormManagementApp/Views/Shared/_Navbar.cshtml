@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "_Navbar";
+}
+
+@*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">*@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<div class="navbar bg-primary navbar-dark navbar-expand-sm">
+    <div class="container">
+        <ul class="navbar-nav">
+            @if (Session["UserId"] != null)
+            {
+            
+                <li class="nav-item">
+                    <form action="/LogOut">
+                        <a href="/Home/Logout" type="submit" class="btn btn-outline-light mr-0">LogOut</a>
+                    </form>
+                </li>
+            }
+            else
+            {
+            <li class="nav-item">
+                <a href="/Home/Index" class="nav-link">Login</a>
+            </li>}
+            @if (Session["UserId"] != null)
+            {
+                <li class="nav-item">
+                    <a href="/Form/Index" class="nav-link">Form Yönetim</a>
+                </li>
+            }
+
+
+        </ul>
+        @*<form  class="form-search">
+                <input type="text" name="txtSearch" id="txtSearch" class="form-control mr-2" placeholder="Search">
+                <button type="submit" class="btn btn-outline-light mr-0" id="btnSearch">Search</button>
+            </form>*@
+        @if (Session["UserId"] != null)
+        {
+            <form action="/list" class="form-search">
+                <input type="text" name="txtSearch" class="form-control mr-2" placeholder="Search">
+                <a href="/Form/List" type="submit" class="btn btn-outline-light mr-0">Search</a>
+            </form>
+        }
+    </div>
+</div>

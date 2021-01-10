@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+@Html.Partial("_Header")
+ <br />
+<br />
+
+<div class="row">
+    <div class="col-md-8">
+            <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">User Name</label>
+                <input type="text" class="form-control" id="txtUserName"  placeholder="Enter User Name">
+                <div id="LoginNameError" class="invisible">User Name Required</div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="txtPassword" placeholder="Enter Password">
+                <div id="PasswordError" class="invisible">Password Required</div>
+            </div>
+            <button  class="btn btn-primary" id="BtnLogin">Giriş Yap</button>
+            </form>
+        <br />
+        <br /><div id="MsgError" class="invisible">
+    Kullanıcı veya şifre hatalı
+</div>
+    </div>
+   
+</div>
